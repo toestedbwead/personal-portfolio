@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ project.name }} - Portfolio{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <!-- Back Button -->
+            <a href="{% url 'projects_list' %}" class="btn btn-outline-secondary mb-4">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+            
+            <!-- Project Image -->
+            <img src="{{ project.image_url }}" 
+                 alt="{{ project.name }}" 
+                 class="img-fluid rounded mb-4" 
+                 style="height: auto; max-height: 400px; object-fit: cover; background-color: #f0f0f0;">
+            
+            <!-- Project Title -->
+            <h1 class="mb-3">{{ project.name }}</h1>
+            
+            <!-- Tech Stack -->
+            <div class="mb-4">
+                <h5>Tech Stack:</h5>
+                {% for tech in project.tech_stack %}
+                    <span class="badge bg-primary me-2 mb-2">{{ tech }}</span>
+                {% endfor %}
+            </div>
+            
+            <!-- Full Description -->
+            <h5 class="mt-4 mb-3">About This Project</h5>
+            <p class="lead">{{ project.full_description }}</p>
+            
+            <!-- Links -->
+            <div class="mt-5">
+                <h5 class="mb-3">Links</h5>
+                <div class="d-flex gap-2">
+                    {% if project.github_url and project.github_url != '[GITHUB_LINK]' %}
+                    <a href="{{ project.github_url }}" 
+                       class="btn btn-dark" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    {% endif %}
+                    
+                    {% if project.live_demo_url and project.live_demo_url != '[LIVE_DEMO_LINK_OR_NONE]' %}
+                    <a href="{{ project.live_demo_url }}" 
+                       class="btn btn-primary" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-12 col-md-4">
+            <div class="card bg-light border-0">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Project Info</h5>
+                    
+                    <div class="mb-3">
+                        <small class="text-muted">Technologies</small>
+                        <p>{{ project.tech_stack|length }} technologies used</p>
+                    </div>
+                    
+                    {% if project.github_url and project.github_url != '[GITHUB_LINK]' %}
+                    <a href="{{ project.github_url }}" 
+                       class="btn btn-outline-dark btn-sm w-100" 
+                       target="_blank">
+                        Repository
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

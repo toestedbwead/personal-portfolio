@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container-main">
+        
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar-left">
+            <!-- TOP BAR -->
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <img src="{% static 'images/logo.png' %}" alt="logo" class="logo-img">
+                    <span style="font-weight: 700;" class="portfolio-title">LEVY</span>
+                </div>
+            </div>
+
+            <div class="sidebar-header">
+                <button class="btn-new">
+                    <i class="fas fa-plus"></i> Projects
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#home" class="nav-item active" data-section="home">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#projects" class="nav-item" data-section="projects">
+                    <i class="fas fa-folder"></i> Projects
+                </a>
+                <a href="#skills" class="nav-item" data-section="skills">
+                    <i class="fas fa-code"></i> Skills
+                </a>
+                <a href="#contact" class="nav-item" data-section="contact">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button style="font-weight: 700;" class="btn-get-touch">Get in touch</button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            
+            <!-- TOP BAR -->
+            <div class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search" disabled>
+                </div>
+
+                <div class="top-icons">
+                    <button class="icon-btn" title="View options">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="icon-btn" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="icon-btn" title="Help">
+                        <i class="fas fa-question-circle"></i>
+                    </button>
+                    <button class="icon-btn" title="Apps">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CONTENT SECTIONS -->
+            <div class="content-wrapper">
+
+                <!-- HOME SECTION -->
+                <section id="home" class="content-section active">
+                    <h1>Welcome to Portfolio</h1>
+                    <p class="intro-text">Aspiring Backend Developer.</p>
+                </section>
+
+                <!-- PROJECTS SECTION -->
+                <section id="projects" class="content-section">
+                    <div class="section-header">
+                        <h2>Projects</h2>
+                        <button class="dropdown-btn" data-target="projects-list">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="projects-list" id="projects-list">
+                        <!-- Projects grid will be populated here -->
+                    </div>
+                </section>
+
+                <!-- SKILLS SECTION -->
+                <section id="skills" class="content-section">
+                    <div class="section-header">
+                        <h2>Skills</h2>
+                        <button class="dropdown-btn" data-target="skills-list">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="skills-list" id="skills-list">
+                        <!-- Skills will be populated here -->
+                    </div>
+                </section>
+
+                <!-- CONTACT SECTION -->
+                <section id="contact" class="content-section">
+                    <div class="section-header">
+                        <h2>Contact</h2>
+                        <button class="dropdown-btn" data-target="contact-content">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="contact-content" id="contact-content">
+                        <form method="post" class="contact-form">
+                            {% csrf_token %}
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <input type="text" placeholder="Subject" required>
+                            <textarea placeholder="Message" rows="4" required></textarea>
+                            <button type="submit" class="btn-submit">Send</button>
+                        </form>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="sidebar-right">
+            <!-- PROFILE SECTION -->
+            <div class="profile-section">
+                <img src="{% static 'images/profile.jpg' %}" alt="Profile" class="profile-pic" id="profile-pic">
+            </div>
+
+            <!-- TECH STACK ICONS -->
+            <div class="tech-stack">
+                <div class="tech-icon" title="Python">
+                    <i class="fab fa-python"></i>
+                </div>
+                <div class="tech-icon" title="Django">
+                    <i class="fab fa-django"></i>
+                </div>
+                <div class="tech-icon" title="PostgreSQL">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="tech-icon" title="Git">
+                    <i class="fab fa-git-alt"></i>
+                </div>
+                <div class="tech-icon" title="HTML5">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <div class="tech-icon" title="CSS3">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <!-- Add more as needed -->
+            </div>
+        </aside>
+    </div>
+
+    <!-- PROFILE MODAL -->
+    <div class="modal-overlay" id="profile-modal">
+        <div class="modal-card">
+            <button class="modal-close" id="close-modal">&times;</button>
+            <img src="{% static 'images/profile.jpg' %}" alt="Profile" class="modal-profile-pic">
+            <h3>Lei Elcano</h3>
+            <p class="modal-email">leielcano@gmail.com</p>
+            <p class="modal-summary">Backend developer passionate about clean code and professional practices.</p>
+            <a href="https://github.com" target="_blank" class="modal-link">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="mailto:your.email@example.com" class="modal-link">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+        </div>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
