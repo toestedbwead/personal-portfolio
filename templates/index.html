@@ -106,8 +106,7 @@
                         <h2>Contact</h2>
                     </div>
                     <div class="contact-content" id="contact-content">
-                        <form method="post" class="contact-form">
-                            {% csrf_token %}
+                        <form method="post" action="https://formspree.io/f/xvzboylk" class="contact-form">
                             <div class="form-group">
                                 <div class="form-icon">
                                     <i class="fas fa-user"></i>
@@ -122,13 +121,13 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-icon">
-                                    <i class="fas fa-subject"></i>
+                                    <i class="fas fa-lightbulb"></i>
                                 </div>
                                 <input type="text" name="subject" placeholder="Subject" required>
                             </div>
                             <div class="form-group">
                                 <div class="form-icon">
-                                    <i class="fas fa-message"></i>
+                                    <i class="fas fa-comment"></i>
                                 </div>
                                 <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
                             </div>
