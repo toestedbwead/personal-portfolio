@@ -313,6 +313,30 @@ function updateThemeIcon(theme) {
 /* ======================
    INITIALIZATION
    ====================== */
+/* ======================
+   HOME SECTION DROPDOWNS
+   ====================== */
+
+document.querySelectorAll('.home-category-header').forEach(header => {
+    const category = header.parentElement;
+    const content = category.querySelector('.home-cards, .home-about');
+    
+    // Keep About Me open on refresh
+    if (content && content.classList.contains('home-about')) {
+        content.style.display = 'block';
+    }
+    
+    header.addEventListener('click', () => {
+        if (content) {
+            if (content.style.display === 'none') {
+                content.style.display = content.classList.contains('home-about') ? 'block' : 'grid';
+            } else {
+                content.style.display = 'none';
+            }
+            header.classList.toggle('collapsed');
+        }
+    });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects();

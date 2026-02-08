@@ -1033,3 +1033,122 @@ html[data-theme="dark"] .nav-item.active {
         max-width: 100%;
     }
 }
+
+/* ======================
+   HOME SECTION
+   ====================== */
+
+#home h1 {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 40px;
+    color: var(--text-primary);
+    transition: color 0.2s ease;
+}
+
+.home-category {
+    margin-bottom: 32px;
+}
+
+.home-category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.home-category-header:hover {
+    opacity: 0.8;
+}
+
+.home-category-header i {
+    font-size: 20px;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.home-category-header.collapsed i {
+    transform: rotate(-90deg);
+}
+
+.home-category-header h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+    transition: color 0.2s ease;
+}
+
+.home-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.home-card {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.home-card:hover {
+    background-color: var(--bg-secondary);
+    box-shadow: 0 2px 8px var(--shadow);
+    transform: translateY(-2px);
+}
+
+.home-card-icon {
+    font-size: 40px;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.home-card-content {
+    flex: 1;
+}
+
+.home-card-content h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0 0 4px 0;
+    transition: color 0.2s ease;
+}
+
+.home-card-content p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin: 0;
+    transition: color 0.2s ease;
+}
+
+.home-about {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    animation: fadeIn 0.3s ease;
+}
+
+.home-about p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    transition: color 0.2s ease;
+}
