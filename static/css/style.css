@@ -206,26 +206,13 @@ html[data-theme="dark"] .nav-item.active {
     border: 1px solid var(--border-light);
     border-radius: 24px;
     cursor: pointer;
-    font-size: 20px;  /* CHANGED: from 13px to 16px */
+    font-size: 16px;
     font-weight: 700;
     color: #1f73db;
     transition: all 0.2s ease;
-    display: block;  /* ADD THIS */
-    text-decoration: none;  /* ADD THIS */
-    text-align: center;  /* ADD THIS */
-}
-
-.btn-get-touch {
-    width: 100%;
-    padding: 14px 16px;
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-light);
-    border-radius: 24px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 500;
-    color: #1f73db;
-    transition: all 0.2s ease;
+    display: block;
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn-get-touch:hover {
@@ -370,7 +357,8 @@ html[data-theme="dark"] .nav-item.active {
 .section-header {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
+    gap: 16px;
     margin-bottom: 16px;
 }
 
@@ -434,7 +422,22 @@ html[data-theme="dark"] .nav-item.active {
     font-size: 32px;
     margin-bottom: 8px;
     color: #4285f4;
+    transition: color 0.2s ease;
 }
+
+/* Project icon colors based on difficulty */
+.project-card[data-difficulty="beginner"] .project-icon {
+    color: #4285f4;  /* Blue */
+}
+
+.project-card[data-difficulty="intermediate"] .project-icon {
+    color: #fbbc04;  /* Yellow */
+}
+
+.project-card[data-difficulty="advanced"] .project-icon {
+    color: #ea4335;  /* Red */
+}
+
 
 .project-name {
     font-size: 14px;
@@ -984,6 +987,10 @@ html[data-theme="dark"] .nav-item.active {
     background-color: var(--text-secondary);
 }
 
+
+.filter-toggle:hover {
+    color: var(--text-primary);
+}
 /* ======================
    RESPONSIVE
    ====================== */
@@ -1151,4 +1158,62 @@ html[data-theme="dark"] .nav-item.active {
     line-height: 1.6;
     margin: 0;
     transition: color 0.2s ease;
+}
+
+/* ======================
+   PROJECT FILTERING
+   ====================== */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+/* Project card difficulty indicator */
+.project-card {
+    position: relative;
+}
+
+.project-card[data-difficulty="beginner"]::before {
+    background-color: #4285f4;
+}
+
+.project-card[data-difficulty="intermediate"]::before {
+    background-color: #fbbc04;
+}
+
+.project-card[data-difficulty="advanced"]::before {
+    background-color: #ea4335;
+}
+
+.difficulty-select {
+    padding: 10px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 24px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+    padding-right: 40px;
+}
+
+.difficulty-select:hover {
+    border-color: var(--border);
+    background-color: var(--bg-secondary);
+}
+
+.difficulty-select:focus {
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
 }

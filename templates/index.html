@@ -77,7 +77,7 @@
 
                 <!-- HOME SECTION -->
                 <section id="home" class="content-section active">
-                    <h1>Welcome to Levy's Portfolio</h1>
+                    <h1>LEI ELCANO</h1>
                     
                     <!-- ROLES SECTION -->
                     <div class="home-category">
@@ -126,20 +126,28 @@
                             <h2>About Me</h2>
                         </div>
                         
-                        <div class="home-about" style="display: none;">
+                        <div class="home-about" style="display: block;">
                             <p>I'm Lei, a passionate backend developer who loves building clean, efficient solutions. I specialize in Python and Django, focusing on creating scalable applications with professional practices. I enjoy solving complex problems, writing maintainable code, and continuously learning new technologies. When I'm not coding, you can find me exploring open-source projects or diving deeper into software architecture.</p>
                         </div>
                     </div>
                 </section>
+
                 <!-- PROJECTS SECTION -->
                 <section id="projects" class="content-section">
                     <div class="section-header">
                         <h2>Projects</h2>
+                        <select id="difficulty-filter" class="difficulty-select">
+                            <option value="all">All Projects</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
                     </div>
                     <div class="projects-list" id="projects-list">
                         <!-- Projects grid will be populated here -->
                     </div>
                 </section>
+
                 <!-- SKILLS SECTION -->
                 <section id="skills" class="content-section">
                     <div class="section-header">
