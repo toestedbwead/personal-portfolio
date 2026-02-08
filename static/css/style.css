@@ -206,6 +206,22 @@ html[data-theme="dark"] .nav-item.active {
     border: 1px solid var(--border-light);
     border-radius: 24px;
     cursor: pointer;
+    font-size: 20px;  /* CHANGED: from 13px to 16px */
+    font-weight: 700;
+    color: #1f73db;
+    transition: all 0.2s ease;
+    display: block;  /* ADD THIS */
+    text-decoration: none;  /* ADD THIS */
+    text-align: center;  /* ADD THIS */
+}
+
+.btn-get-touch {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 24px;
+    cursor: pointer;
     font-size: 13px;
     font-weight: 500;
     color: #1f73db;
