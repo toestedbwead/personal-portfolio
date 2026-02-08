@@ -35,12 +35,35 @@ body {
    ====================== */
 
 .sidebar-left {
-    background-color: #f8f9fd;
+    background-color: #f8fafd;
     border-right: none;
     padding: 12px 0;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+}
+
+.sidebar-header-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 12px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e8eaed;
+}
+
+.logo-img {
+    width: 44px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.portfolio-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #202124;
+    letter-spacing: 0.5px;
 }
 
 .sidebar-header {
@@ -51,7 +74,7 @@ body {
 .btn-new {
     width: 100%;
     padding: 20px 16px;
-    background-color: #f8f9fd;
+    background-color: #f8fafd;
     border: 1px solid #dadce0;
     border-radius: 24px;
     cursor: pointer;
@@ -151,21 +174,6 @@ body {
     padding: 16px 32px;
     border-bottom: none;
     background-color: #f8fafd;
-}
-
-.top-bar-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: auto;  /* CHANGED: from 200px to auto */
-}
-
-
-.logo-img {
-    width: 44px;
-    height: 40px;
-    object-fit: contain;
-    flex-shrink: 0;
 }
 
 .search-bar {
@@ -303,7 +311,7 @@ body {
 .projects-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
+    gap: 24px;
     margin-top: 16px;
 }
 
@@ -316,11 +324,16 @@ body {
     transition: all 0.2s ease;
     text-decoration: none;
     color: inherit;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-card:hover {
     background-color: #f1f3f4;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
 }
 
 .project-icon {
@@ -433,7 +446,7 @@ body {
    ====================== */
 
 .sidebar-right {
-    background-color: #f8f9fd;
+    background-color: #f8fafd;
     border-left: none;
     padding: 16px 8px;
     overflow-y: auto;
@@ -515,7 +528,7 @@ body {
 }
 
 /* ======================
-   MODAL
+   PROFILE MODAL
    ====================== */
 
 .modal-overlay {
@@ -628,6 +641,134 @@ body {
 }
 
 /* ======================
+   PROJECT MODAL
+   ====================== */
+
+.project-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.project-modal-overlay.active {
+    display: flex;
+}
+
+.project-modal-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 32px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideInCenter 0.3s ease;
+}
+
+@keyframes slideInCenter {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-image-container {
+    margin-bottom: 24px;
+}
+
+.modal-project-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.image-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.image-prev,
+.image-next {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1f73db;
+    transition: all 0.2s ease;
+}
+
+.image-prev:hover,
+.image-next:hover {
+    transform: scale(1.2);
+    color: #357ae8;
+}
+
+.image-counter {
+    font-size: 14px;
+    color: #5f6368;
+    min-width: 60px;
+    text-align: center;
+}
+
+.modal-details h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #202124;
+}
+
+.modal-details p {
+    color: #5f6368;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.modal-links {
+    display: flex;
+    gap: 12px;
+}
+
+.modal-link-btn {
+    flex: 1;
+    padding: 12px;
+    background-color: #f8fafd;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #1f73db;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.modal-link-btn:hover {
+    background-color: #f1f3f4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* ======================
    SCROLLBAR STYLING
    ====================== */
 
@@ -674,5 +815,10 @@ body {
 
     .projects-list {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .project-modal-card {
+        width: 95%;
+        padding: 24px;
     }
 }

@@ -90,43 +90,71 @@ const projects = [
         id: 'task-tracker',
         name: 'Task Tracker',
         description: 'a python command-line task tracker that stores tasks in a JSON',
-        icon: '📋'
+        icon: 'fab fa-python',
+        images: ['/static/images/projects/task-tracker-1.png', '/static/images/projects/task-tracker-2.png'],
+        details: 'A Python CLI task tracker that stores tasks in JSON. Features include adding, deleting, marking complete, and listing tasks with persistent storage.',
+        github: 'https://github.com/yourname/task-tracker',
+        liveDemo: null
     },
     {
         id: 'github-user-activity',
         name: 'GitHub User Activity',
         description: "a python command-line interface tool to fetch and display a Github's user recent activity directly in terminal.",
-        icon: '🐙'
+        icon: 'fab fa-github',
+        images: ['/static/images/projects/github-user-activity-1.png'],
+        details: 'A Python CLI tool that fetches and displays a GitHub user\'s recent activity directly in the terminal using the GitHub API. Shows contributions, repositories, and more.',
+        github: 'https://github.com/yourname/github-user-activity',
+        liveDemo: null
     },
     {
         id: 'expense-tracker',
         name: 'Expense Tracker',
         description: 'a command-line expense tracker built with Python to manage personal finances. track, update, and analyze expenses with simple commands.',
-        icon: '💰'
+        icon: 'fab fa-python',
+        images: ['/static/images/projects/expense-tracker-1.png'],
+        details: 'A command-line expense tracker built with Python for managing personal finances. Track, update, categorize, and analyze expenses with persistent CSV storage.',
+        github: 'https://github.com/yourname/expense-tracker',
+        liveDemo: null
     },
     {
         id: 'weather-cli',
         name: 'Weather CLI',
         description: 'a command-line application to fetch and display current weather information for any city using the OpenWeatherMap API',
-        icon: '🌦️'
+        icon: 'fab fa-python',
+        images: ['/static/images/projects/weather-cli-1.png'],
+        details: 'A CLI application that fetches and displays current weather information for any city using the OpenWeatherMap API. Shows temperature, humidity, wind speed, and more.',
+        github: 'https://github.com/yourname/weather-cli',
+        liveDemo: null
     },
     {
         id: 'number-guessing-game',
         name: 'Number Guessing Game',
         description: 'a cli-based number guessing game built with python using professional practices including OOP, modular structure, and git workflows.',
-        icon: '🎮'
+        icon: 'fab fa-python',
+        images: ['/static/images/projects/number-guessing-game-1.png'],
+        details: 'A CLI-based number guessing game built with Python using professional practices: OOP principles, modular structure, error handling, and proper git workflows.',
+        github: 'https://github.com/yourname/number-guessing-game',
+        liveDemo: null
     },
     {
         id: 'unit-converter',
         name: 'Unit Converter',
         description: 'a unit conversion web app built with Django. supports conversion between units of length, weight, and temperature.',
-        icon: '⚙️'
+        icon: 'fab fa-django',
+        images: ['/static/images/projects/unit-converter-1.png', '/static/images/projects/unit-converter-2.png'],
+        details: 'A unit conversion web app built with Django. Supports conversion between units of length, weight, and temperature with a clean, responsive UI and form validation.',
+        github: 'https://github.com/yourname/unit-converter',
+        liveDemo: 'https://yourname-unit-converter.herokuapp.com'
     },
     {
         id: 'personal-blog',
         name: 'Personal Blog System',
         description: 'a multi-user blogging platform where users can register, create, and manage their own articles. the platform includes a guest-facing section for browsing published articles and an authenticated user dashboard for content management.',
-        icon: '📝'
+        icon: 'fab fa-django',
+        images: ['/static/images/projects/blog-1.png', '/static/images/projects/blog-2.png', '/static/images/projects/blog-3.png'],
+        details: 'A multi-user blogging platform built with Django. Users can register, authenticate, create articles, manage their content, and browse published articles. Features include user permissions, article filtering, and a professional admin dashboard.',
+        github: 'https://github.com/yourname/personal-blog',
+        liveDemo: 'https://yourname-blog.herokuapp.com'
     }
 ];
 
@@ -137,7 +165,7 @@ const projects = [
 function renderProjects() {
     projectsList.innerHTML = projects.map(project => `
         <div class="project-card" data-id="${project.id}">
-            <div class="project-icon">${project.icon}</div>
+            <div class="project-icon"><i class="${project.icon}"></i></div>
             <div class="project-name">${project.name}</div>
             <div class="project-desc">${project.description}</div>
         </div>
@@ -147,11 +175,91 @@ function renderProjects() {
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', function() {
             const projectId = this.dataset.id;
-            console.log('Clicked project:', projectId);
-            // TODO: Navigate to project detail page or open modal
+            const project = projects.find(p => p.id === projectId);
+            if (project) {
+                openProjectModal(project);
+            }
         });
     });
 }
+
+/* ======================
+   PROJECT MODAL
+   ====================== */
+
+let currentImageIndex = 0;
+let currentProject = null;
+
+function openProjectModal(project) {
+    currentProject = project;
+    currentImageIndex = 0;
+    
+    const projectModal = document.getElementById('project-modal');
+    if (!projectModal) {
+        console.error('Project modal not found in HTML');
+        return;
+    }
+    
+    document.getElementById('modal-project-name').textContent = project.name;
+    document.getElementById('modal-project-details').textContent = project.details;
+    document.getElementById('modal-github').href = project.github;
+    
+    // Handle live demo link
+    const liveDemoLink = document.getElementById('modal-live-demo');
+    if (project.liveDemo) {
+        liveDemoLink.style.display = 'flex';
+        liveDemoLink.href = project.liveDemo;
+    } else {
+        liveDemoLink.style.display = 'none';
+    }
+    
+    // Handle images
+    if (project.images && project.images.length > 0) {
+        updateModalImage();
+        document.querySelector('.image-nav').style.display = 'flex';
+    } else {
+        document.querySelector('.image-nav').style.display = 'none';
+    }
+    
+    projectModal.classList.add('active');
+}
+
+function updateModalImage() {
+    const images = currentProject.images || [];
+    if (images.length > 0) {
+        document.getElementById('modal-project-img').src = images[currentImageIndex];
+        document.getElementById('img-current').textContent = currentImageIndex + 1;
+        document.getElementById('img-total').textContent = images.length;
+    }
+}
+
+// Project modal image navigation
+document.getElementById('img-prev')?.addEventListener('click', () => {
+    if (currentProject && currentProject.images) {
+        currentImageIndex = (currentImageIndex - 1 + currentProject.images.length) % currentProject.images.length;
+        updateModalImage();
+    }
+});
+
+document.getElementById('img-next')?.addEventListener('click', () => {
+    if (currentProject && currentProject.images) {
+        currentImageIndex = (currentImageIndex + 1) % currentProject.images.length;
+        updateModalImage();
+    }
+});
+
+document.getElementById('close-project-modal')?.addEventListener('click', () => {
+    const projectModal = document.getElementById('project-modal');
+    if (projectModal) {
+        projectModal.classList.remove('active');
+    }
+});
+
+document.getElementById('project-modal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'project-modal') {
+        e.target.classList.remove('active');
+    }
+});
 
 /* ======================
    SKILLS DATA
