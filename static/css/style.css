@@ -1279,3 +1279,139 @@ html[data-theme="dark"] .nav-item.active {
     top: 8px;
     right: 8px;
 }
+
+/* ======================
+   SKILLS TABLE
+   ====================== */
+
+.skills-container {
+    margin-top: 16px;
+}
+
+.skills-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.skills-header {
+    display: grid;
+    grid-template-columns: 200px 1fr 40px;
+    gap: 0;
+    padding: 16px;
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skills-col-name {
+    color: var(--text-primary);
+}
+
+.skills-col-context {
+    color: var(--text-secondary);
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.skill-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 40px;
+    gap: 16px;
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.skill-row:last-child {
+    border-bottom: none;
+}
+
+.skill-row:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.skill-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: color 0.2s ease;
+}
+
+.skill-file-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.skill-file-icon[data-type="excel"] {
+    color: #70ad47;  /* Excel green */
+}
+
+.skill-file-icon[data-type="docs"] {
+    color: #4285f4;  /* Docs blue */
+}
+
+.skill-context {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    transition: color 0.2s ease;
+}
+
+.skill-menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-tertiary);
+    font-size: 16px;
+    padding: 4px 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-menu-btn:hover {
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .skills-header {
+        display: none;
+    }
+    
+    .skill-row {
+        grid-template-columns: 1fr 30px;
+        gap: 8px;
+    }
+    
+    .skill-name {
+        grid-column: 1 / -1;
+        margin-bottom: 4px;
+        font-weight: 600;
+    }
+    
+    .skill-context {
+        grid-column: 1 / -1;
+    }
+    
+    .skill-menu-btn {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}

@@ -262,16 +262,15 @@ document.getElementById('project-modal')?.addEventListener('click', (e) => {
    ====================== */
 
 const skills = [
-    { name: 'Python', icon: 'fab fa-python' },
-    { name: 'Django', icon: 'fab fa-django' },
-    { name: 'PostgreSQL', icon: 'fas fa-database' },
-    { name: 'SQLite', icon: 'fas fa-database' },
-    { name: 'Git', icon: 'fab fa-git-alt' },
-    { name: 'GitHub', icon: 'fab fa-github' },
-    { name: 'HTML5', icon: 'fab fa-html5' },
-    { name: 'CSS3', icon: 'fab fa-css3-alt' },
-    { name: 'JavaScript', icon: 'fab fa-js-square' },
-    { name: 'Linux', icon: 'fab fa-linux' },
+    { name: 'Python', context: 'Backend logic, CLI tools, scripting', icon: 'fab fa-python', type: 'docs' },
+    { name: 'Django', context: 'Web frameworks, REST APIs, MVC architecture', icon: 'fab fa-django', type: 'docs' },
+    { name: 'PostgreSQL', context: 'Database design, complex queries', icon: 'fas fa-database', type: 'excel' },
+    { name: 'SQLite', context: 'Lightweight databases, testing', icon: 'fas fa-database', type: 'excel' },
+    { name: 'Git/GitHub', context: 'Version control, collaboration', icon: 'fab fa-git-alt', type: 'docs' },
+    { name: 'HTML5', context: 'Semantic markup, forms', icon: 'fab fa-html5', type: 'docs' },
+    { name: 'CSS3', context: 'Styling, layouts, responsive design', icon: 'fab fa-css3-alt', type: 'docs' },
+    { name: 'JavaScript', context: 'Frontend interactivity, DOM manipulation', icon: 'fab fa-js-square', type: 'docs' },
+    { name: 'Linux', context: 'Command line, server management', icon: 'fab fa-linux', type: 'docs' },
 ];
 
 /* ======================
@@ -280,9 +279,17 @@ const skills = [
 
 function renderSkills() {
     skillsList.innerHTML = skills.map(skill => `
-        <div class="skill-item" title="${skill.name}">
-            <i class="${skill.icon}"></i>
-            <div class="skill-name">${skill.name}</div>
+        <div class="skill-row">
+            <div class="skill-name">
+                <span class="skill-file-icon" data-type="${skill.type}">
+                    ${skill.type === 'excel' ? '<i class="fas fa-file-excel"></i>' : '<i class="fas fa-file-word"></i>'}
+                </span>
+                ${skill.name}
+            </div>
+            <div class="skill-context">${skill.context}</div>
+            <button class="skill-menu-btn">
+                <i class="fas fa-ellipsis-v"></i>
+            </button>
         </div>
     `).join('');
 }
