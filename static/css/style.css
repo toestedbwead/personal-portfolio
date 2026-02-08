@@ -36,7 +36,7 @@ body {
 
 .sidebar-left {
     background-color: #f8f9fd;
-    border-right: 1px solid #e8eaed;
+    border-right: none;
     padding: 12px 0;
     overflow-y: auto;
     display: flex;
@@ -139,6 +139,8 @@ body {
     flex-direction: column;
     background-color: #ffffff;
     overflow: hidden;
+    border-radius: 12px;
+    margin: 8px;
 }
 
 /* Top Bar */
@@ -147,7 +149,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 16px 32px;
-    border-bottom: 1px solid #e8eaed;
+    border-bottom: none;
     background-color: #f8fafd;
 }
 
@@ -432,7 +434,7 @@ body {
 
 .sidebar-right {
     background-color: #f8f9fd;
-    border-left: 1px solid #e8eaed;
+    border-left: none;
     padding: 16px 8px;
     overflow-y: auto;
     display: flex;

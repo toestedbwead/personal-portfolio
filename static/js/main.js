@@ -89,43 +89,43 @@ const projects = [
     {
         id: 'task-tracker',
         name: 'Task Tracker',
-        description: '[SHORT_DESC]',
+        description: 'a python command-line task tracker that stores tasks in a JSON',
         icon: '📋'
     },
     {
         id: 'github-user-activity',
         name: 'GitHub User Activity',
-        description: '[SHORT_DESC]',
+        description: "a python command-line interface tool to fetch and display a Github's user recent activity directly in terminal.",
         icon: '🐙'
     },
     {
         id: 'expense-tracker',
         name: 'Expense Tracker',
-        description: '[SHORT_DESC]',
+        description: 'a command-line expense tracker built with Python to manage personal finances. track, update, and analyze expenses with simple commands.',
         icon: '💰'
     },
     {
         id: 'weather-cli',
         name: 'Weather CLI',
-        description: '[SHORT_DESC]',
+        description: 'a command-line application to fetch and display current weather information for any city using the OpenWeatherMap API',
         icon: '🌦️'
     },
     {
         id: 'number-guessing-game',
         name: 'Number Guessing Game',
-        description: '[SHORT_DESC]',
+        description: 'a cli-based number guessing game built with python using professional practices including OOP, modular structure, and git workflows.',
         icon: '🎮'
     },
     {
         id: 'unit-converter',
         name: 'Unit Converter',
-        description: '[SHORT_DESC]',
+        description: 'a unit conversion web app built with Django. supports conversion between units of length, weight, and temperature.',
         icon: '⚙️'
     },
     {
         id: 'personal-blog',
         name: 'Personal Blog System',
-        description: '[SHORT_DESC]',
+        description: 'a multi-user blogging platform where users can register, create, and manage their own articles. the platform includes a guest-facing section for browsing published articles and an authenticated user dashboard for content management.',
         icon: '📝'
     }
 ];
