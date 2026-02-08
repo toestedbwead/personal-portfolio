@@ -87,7 +87,7 @@ html, body {
     gap: 12px;
     padding: 16px 12px;
     margin-bottom: 8px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: none;  /* CHANGED: from 1px solid var(--border) to none */
     transition: border-color 0.2s ease;
 }
 
@@ -195,7 +195,7 @@ html[data-theme="dark"] .nav-item.active {
 /* Sidebar Footer */
 .sidebar-footer {
     padding: 16px 8px;
-    border-top: 1px solid var(--border);
+    border-top: none;  /* CHANGED: from 1px solid var(--border) to none */
     transition: border-color 0.2s ease;
 }
 
@@ -304,7 +304,7 @@ html[data-theme="dark"] .nav-item.active {
     flex-direction: column;
     background-color: var(--bg-primary);
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 25px;
     transition: background-color 0.2s ease;
     grid-column: 2;
     grid-row: 2;
