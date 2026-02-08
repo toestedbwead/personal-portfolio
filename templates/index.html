@@ -55,13 +55,13 @@
             </div>
 
             <div class="top-icons">
-                <button class="icon-btn" title="View options">
+                <button class="icon-btn info-btn" data-info="view-options" title="View options">
                     <i class="fas fa-th"></i>
                 </button>
-                <button class="icon-btn" title="Settings">
+                <button class="icon-btn info-btn" data-info="settings" title="Settings">
                     <i class="fas fa-cog"></i>
                 </button>
-                <button class="icon-btn" title="Help">
+                <button class="icon-btn info-btn" data-info="help" title="Help">
                     <i class="fas fa-question-circle"></i>
                 </button>
                 <button class="icon-btn" id="theme-toggle" title="Dark Mode">
@@ -147,6 +147,16 @@
                         <!-- Projects grid will be populated here -->
                     </div>
                 </section>
+
+                <!-- INFO MODAL -->
+                <div class="info-modal-overlay" id="info-modal">
+                    <div class="info-modal-card">
+                        <button class="modal-close" id="close-info-modal">&times;</button>
+                        <div class="info-content">
+                            <p id="info-text"></p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- SKILLS SECTION -->
                 <section id="skills" class="content-section">

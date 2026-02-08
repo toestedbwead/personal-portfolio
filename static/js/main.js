@@ -369,3 +369,43 @@ document.addEventListener('DOMContentLoaded', () => {
         contentSections[0].classList.add('active');
     }
 });
+
+/* ======================
+   INFO MODAL
+   ====================== */
+
+const infoButtons = document.querySelectorAll('.info-btn');
+const infoModal = document.getElementById('info-modal');
+const closeInfoModal = document.getElementById('close-info-modal');
+const infoText = document.getElementById('info-text');
+const infoModalCard = document.querySelector('.info-modal-card');
+
+const infoMessages = {
+    'view-options': "I mainly work with Python and Django because I'm interested in exploring AI and ML. It's a solid foundation for that kind of stuff.",
+    'settings': "I've always enjoyed doing backend development. I like dealing with logic—it's straightforward and satisfying.",
+    'help': "This portfolio was inspired by Google Drive's design. Hopefully you can see the resemblance!"
+};
+
+infoButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const infoKey = btn.dataset.info;
+        infoText.textContent = infoMessages[infoKey];
+        infoModal.classList.add('active');
+        
+        // Position modal to the left of the clicked icon
+        const rect = btn.getBoundingClientRect();
+        infoModalCard.style.top = rect.bottom + 8 + 'px';
+        infoModalCard.style.right = window.innerWidth - rect.left + 8 + 'px';
+    });
+});
+
+closeInfoModal.addEventListener('click', () => {
+    infoModal.classList.remove('active');
+});
+
+// Close modal when clicking outside
+infoModal.addEventListener('click', (e) => {
+    if (e.target === infoModal) {
+        infoModal.classList.remove('active');
+    }
+});
