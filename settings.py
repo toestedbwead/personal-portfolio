@@ -3,14 +3,15 @@ Django settings for portfolio project.
 """
 
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'your-secret-key-change-this-in-production'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['levy-personal-portfolio.com', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.contenttypes',
@@ -70,7 +71,7 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'portfolio_project' / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [BASE_DIR / 'portfolio_project' / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
