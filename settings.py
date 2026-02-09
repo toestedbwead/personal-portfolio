@@ -11,7 +11,7 @@ SECRET_KEY = 'your-secret-key-change-this-in-production'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['levy-personal-portfolio.com', 'localhost']
+ALLOWED_HOSTS = ['levy-personal-portfolio.onrender.com', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.contenttypes',
