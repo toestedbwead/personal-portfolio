@@ -77,8 +77,8 @@ const projects = [
         difficulty: 'beginner',
         images: ['/static/images/projects/test.jpg', '/static/images/projects/test.jpg'],
         details: 'A Python CLI task tracker that stores tasks in JSON. Features include adding, deleting, marking complete, and listing tasks with persistent storage.',
-        tech: 'Python, JSON',
-        github: 'https://github.com/yourname/task-tracker',
+        tech: 'Python',
+        github: 'https://github.com/toestedbwead/task-tracker-py',
         liveDemo: null
     },
     {
@@ -89,8 +89,8 @@ const projects = [
         difficulty: 'beginner',
         images: ['/static/images/projects/github-user-activity-1.png'],
         details: 'A Python CLI tool that fetches and displays a GitHub user\'s recent activity directly in the terminal using the GitHub API. Shows contributions, repositories, and more.',
-        tech: 'Python, JSON',
-        github: 'https://github.com/yourname/github-user-activity',
+        tech: 'Python',
+        github: 'https://github.com/toestedbwead/Github-User-Activity',
         liveDemo: null
     },
     {
@@ -101,8 +101,8 @@ const projects = [
         difficulty: 'beginner',
         images: ['/static/images/projects/expense-tracker-1.png'],
         details: 'A command-line expense tracker built with Python for managing personal finances. Track, update, categorize, and analyze expenses with persistent CSV storage.',
-        tech: 'Python, JSON',
-        github: 'https://github.com/yourname/expense-tracker',
+        tech: 'Python',
+        github: 'https://github.com/toestedbwead/expense-tracker',
         liveDemo: null
     },
     {
@@ -113,8 +113,8 @@ const projects = [
         difficulty: 'intermediate',
         images: ['/static/images/projects/weather-cli-1.png'],
         details: 'A CLI application that fetches and displays current weather information for any city using the OpenWeatherMap API. Shows temperature, humidity, wind speed, and more.',
-        tech: 'Python, JSON',
-        github: 'https://github.com/yourname/weather-cli',
+        tech: 'Python',
+        github: 'https://github.com/toestedbwead/weather-cli',
         liveDemo: null
     },
     {
@@ -125,8 +125,8 @@ const projects = [
         difficulty: 'intermediate',
         images: ['/static/images/projects/number-guessing-game-1.png'],
         details: 'A CLI-based number guessing game built with Python using professional practices: OOP principles, modular structure, error handling, and proper git workflows.',
-        tech: 'Python, JSON',
-        github: 'https://github.com/yourname/number-guessing-game',
+        tech: 'Django, Python',
+        github: 'https://github.com/toestedbwead/number-guessing-game',
         liveDemo: null
     },
     {
@@ -137,8 +137,8 @@ const projects = [
         difficulty: 'advanced',
         images: ['/static/images/projects/unit-converter-1.png', '/static/images/projects/unit-converter-2.png'],
         details: 'A unit conversion web app built with Django. Supports conversion between units of length, weight, and temperature with a clean, responsive UI and form validation.',
-        tech: 'Python, JSON',
-        github: 'https://github.com/yourname/unit-converter',
+        tech: 'Django, Python',
+        github: 'https://github.com/toestedbwead/django-unit-converter',
         liveDemo: 'https://yourname-unit-converter.herokuapp.com'
     },
     {
@@ -149,8 +149,8 @@ const projects = [
         difficulty: 'advanced',
         images: ['/static/images/projects/blog-1.png', '/static/images/projects/blog-2.png', '/static/images/projects/blog-3.png'],
         details: 'A multi-user blogging platform built with Django. Users can register, authenticate, create articles, manage their content, and browse published articles. Features include user permissions, article filtering, and a professional admin dashboard.',
-        tech: 'Python, JSON',
-        github: 'https://github.com/yourname/personal-blog',
+        tech: 'Python, Django',
+        github: 'https://github.com/toestedbwead/personal-blog',
         liveDemo: 'https://yourname-blog.herokuapp.com'
     },
     {
@@ -161,8 +161,8 @@ const projects = [
         difficulty: 'intermediate',
         images: ['/static/images/projects/tara-kefi-1.png', '/static/images/projects/tara-kefi-2.png'],
         details: 'Built a complete end-to-end Android ordering flow with splash screen, authentication, product menu, shopping cart, cat selection, and PDF receipt export. Features a warm, cozy design with 6 unique cat "servers" and playful branding. Developed with Kotlin, Android Views, and in-memory state management.',
-        tech: 'Python, JSON',
-        github: 'https://github.com/yourname/tara-kefi',
+        tech: 'Java',
+        github: 'https://github.com/toestedbwead/Tara-Kefi',
         liveDemo: null
     }
 ];
