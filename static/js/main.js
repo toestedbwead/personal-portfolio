@@ -77,6 +77,7 @@ const projects = [
         difficulty: 'beginner',
         images: ['/static/images/projects/test.jpg', '/static/images/projects/test.jpg'],
         details: 'A Python CLI task tracker that stores tasks in JSON. Features include adding, deleting, marking complete, and listing tasks with persistent storage.',
+        tech: 'Python, JSON',
         github: 'https://github.com/yourname/task-tracker',
         liveDemo: null
     },
@@ -88,6 +89,7 @@ const projects = [
         difficulty: 'beginner',
         images: ['/static/images/projects/github-user-activity-1.png'],
         details: 'A Python CLI tool that fetches and displays a GitHub user\'s recent activity directly in the terminal using the GitHub API. Shows contributions, repositories, and more.',
+        tech: 'Python, JSON',
         github: 'https://github.com/yourname/github-user-activity',
         liveDemo: null
     },
@@ -99,6 +101,7 @@ const projects = [
         difficulty: 'beginner',
         images: ['/static/images/projects/expense-tracker-1.png'],
         details: 'A command-line expense tracker built with Python for managing personal finances. Track, update, categorize, and analyze expenses with persistent CSV storage.',
+        tech: 'Python, JSON',
         github: 'https://github.com/yourname/expense-tracker',
         liveDemo: null
     },
@@ -110,6 +113,7 @@ const projects = [
         difficulty: 'intermediate',
         images: ['/static/images/projects/weather-cli-1.png'],
         details: 'A CLI application that fetches and displays current weather information for any city using the OpenWeatherMap API. Shows temperature, humidity, wind speed, and more.',
+        tech: 'Python, JSON',
         github: 'https://github.com/yourname/weather-cli',
         liveDemo: null
     },
@@ -121,6 +125,7 @@ const projects = [
         difficulty: 'intermediate',
         images: ['/static/images/projects/number-guessing-game-1.png'],
         details: 'A CLI-based number guessing game built with Python using professional practices: OOP principles, modular structure, error handling, and proper git workflows.',
+        tech: 'Python, JSON',
         github: 'https://github.com/yourname/number-guessing-game',
         liveDemo: null
     },
@@ -132,6 +137,7 @@ const projects = [
         difficulty: 'advanced',
         images: ['/static/images/projects/unit-converter-1.png', '/static/images/projects/unit-converter-2.png'],
         details: 'A unit conversion web app built with Django. Supports conversion between units of length, weight, and temperature with a clean, responsive UI and form validation.',
+        tech: 'Python, JSON',
         github: 'https://github.com/yourname/unit-converter',
         liveDemo: 'https://yourname-unit-converter.herokuapp.com'
     },
@@ -143,8 +149,21 @@ const projects = [
         difficulty: 'advanced',
         images: ['/static/images/projects/blog-1.png', '/static/images/projects/blog-2.png', '/static/images/projects/blog-3.png'],
         details: 'A multi-user blogging platform built with Django. Users can register, authenticate, create articles, manage their content, and browse published articles. Features include user permissions, article filtering, and a professional admin dashboard.',
+        tech: 'Python, JSON',
         github: 'https://github.com/yourname/personal-blog',
         liveDemo: 'https://yourname-blog.herokuapp.com'
+    },
+    {
+        id: 'tara-kefi',
+        name: 'Tara, Kefi – Cat Café Ordering App',
+        description: 'Playful Android app for a fictional cat café with menu browsing, cart system, and PDF receipt generation',
+        icon: 'fas fa-mobile-alt',
+        difficulty: 'intermediate',
+        images: ['/static/images/projects/tara-kefi-1.png', '/static/images/projects/tara-kefi-2.png'],
+        details: 'Built a complete end-to-end Android ordering flow with splash screen, authentication, product menu, shopping cart, cat selection, and PDF receipt export. Features a warm, cozy design with 6 unique cat "servers" and playful branding. Developed with Kotlin, Android Views, and in-memory state management.',
+        tech: 'Python, JSON',
+        github: 'https://github.com/yourname/tara-kefi',
+        liveDemo: null
     }
 ];
 
@@ -198,6 +217,7 @@ function openProjectModal(project) {
     
     document.getElementById('modal-project-name').textContent = project.name;
     document.getElementById('modal-project-details').textContent = project.details;
+    document.getElementById('modal-project-tech').textContent = project.tech; // ADD THIS
     document.getElementById('modal-github').href = project.github;
     
     // Handle live demo link
