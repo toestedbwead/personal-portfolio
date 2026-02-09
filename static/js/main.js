@@ -262,16 +262,14 @@ document.getElementById('project-modal')?.addEventListener('click', (e) => {
    ====================== */
 
 const skills = [
-    { name: 'Python', context: 'Backend logic, CLI tools, scripting', icon: 'fab fa-python', type: 'docs' },
-    { name: 'Django', context: 'Web frameworks, REST APIs, MVC architecture', icon: 'fab fa-django', type: 'docs' },
-    { name: 'PostgreSQL', context: 'Database design, complex queries', icon: 'fas fa-database', type: 'excel' },
-    { name: 'SQLite', context: 'Lightweight databases, testing', icon: 'fas fa-database', type: 'excel' },
-    { name: 'Git/GitHub', context: 'Version control, collaboration', icon: 'fab fa-git-alt', type: 'docs' },
-    { name: 'HTML5', context: 'Semantic markup, forms', icon: 'fab fa-html5', type: 'docs' },
-    { name: 'CSS3', context: 'Styling, layouts, responsive design', icon: 'fab fa-css3-alt', type: 'docs' },
-    { name: 'JavaScript', context: 'Frontend interactivity, DOM manipulation', icon: 'fab fa-js-square', type: 'docs' },
-    { name: 'Linux', context: 'Command line, server management', icon: 'fab fa-linux', type: 'docs' },
-];
+    { name: 'Python', context: 'CLI tools, OOP, data structures, scripting', icon: 'fab fa-python', type: 'docs' },
+    { name: 'Django', context: 'Models, views, authentication, permissions, ORM, API endpoints', icon: 'fas fa-cube', type: 'docs' },
+    { name: 'PostgreSQL', context: 'Enterprise systems, API design, complex queries, government platforms', icon: 'fas fa-database', type: 'excel' },
+    { name: 'MySQL', context: 'Web systems, database architecture, POS & inventory systems', icon: 'fas fa-database', type: 'excel' },
+    { name: 'PHP', context: 'Backend web development, shift & scheduling systems, web applications', icon: 'fab fa-php', type: 'docs' },
+    { name: 'Bootstrap 5', context: 'UI components, responsive layouts, styling', icon: 'fab fa-bootstrap', type: 'docs' },
+    { name: 'Git/GitHub', context: 'Feature branches, team collaboration, professional workflow', icon: 'fab fa-git-alt', type: 'docs' },
+];  
 
 /* ======================
    RENDER SKILLS
