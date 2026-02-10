@@ -5,7 +5,7 @@ Django settings for portfolio project.
 from pathlib import Path
 import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 
 SECRET_KEY = 'your-secret-key-change-this-in-production'
 
